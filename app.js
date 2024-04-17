@@ -9,78 +9,66 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(__dirname + '/public'));
 
-// Datos sobre Renzo
-const renzoData = {
-    nombre: 'Renzo Sarmiento',
-    grado: 'Titulado',
-    telefono: '+51 900574926',
-    ubicacion: 'Trjillo, Perú',
-    cumple: '07 de Marzo',
-    exp: '5 años',
-    email: 'renzo.sarmiento@tecsup.edu.pe',
-    free: 'Disponible',
-    image: '/img/profile.jpg'
+// Datos sobre los usuarios
+const usuarios = {
+    Renzo: {
+        nombre: 'Renzo Sarmiento',
+        grado: 'Titulado',
+        telefono: '+51 900574926',
+        ubicacion: 'Trujillo, Perú',
+        cumple: '07 de Marzo',
+        exp: '5 años',
+        email: 'renzo.sarmiento@tecsup.edu.pe',
+        free: 'Disponible',
+        image: '/img/profile.jpg'
+    },
+    Carmen: {
+        nombre: 'Carmen Sandoval',
+        grado: 'Titulado',
+        telefono: '+51 937473824',
+        ubicacion: 'Lima, Perú',
+        cumple: '12 de Septiembre',
+        exp: '6 años',
+        email: 'carmen.sandoval@tecsup.edu.pe',
+        free: 'Disponible',
+        image: '/img/carmen.jpg'
+    },
+    Leomar: {
+        nombre: 'Leomar Urcia',
+        grado: 'Titulado',
+        telefono: '+51 983636274',
+        ubicacion: 'Cartavio, Perú',
+        cumple: '28 de abril',
+        exp: '5 años',
+        email: 'leomar.urcia@tecsup.edu.pe',
+        free: 'Disponible',
+        image: '/img/leomar.jpg'
+    },
+    Eduardo: {
+        nombre: 'Eduardo Dioses',
+        grado: 'Titulado',
+        telefono: '+51 937473824',
+        ubicacion: 'Piura, Perú',
+        cumple: '12 de Septiembre',
+        exp: '6 años',
+        email: 'eduardo.dioses@tecsup.edu.pe',
+        free: 'No disponible',
+        image: '/img/eduardo.jpg'
+    }
 };
 
-app.get('/portafolio/Renzo', (req, res) => {
-    // Renderiza la vista "Eduardo.ejs" con los datos proporcionados
-    res.render('index', { data: renzoData });
+// Ruta base para obtener los perfiles
+app.get('/portafolio/:id', (req, res) => {
+    const userId = req.params.id;
+    // Verificar si el usuario existe en la base de datos
+    if (usuarios.hasOwnProperty(userId)) {
+        const userData = usuarios[userId];
+        res.render('index', { data: userData });
+    } else {
+        // Renderizar una página de error o redireccionar a otra página
+        res.render('error', { mensaje: 'Usuario no encontrado' });
+    }
 });
-
-// Datos sobre Carmen
-const carmenData = {
-    nombre: 'Carmen Sandoval',
-    grado: 'Titulado',
-    telefono: '+51  937473824',
-    ubicacion: 'Lima, Perú',
-    cumple: '12 de Septiembre',
-    exp: '6 años',
-    email: 'carmen.sandoval@tecsup.edu.pe',
-    free: 'Disponible',
-    image: '/img/carmen.jpg'
-};
-
-app.get('/portafolio/Carmen', (req, res) => {
-    // Renderiza la vista "Eduardo.ejs" con los datos proporcionados
-    res.render('index', { data: carmenData });
-});
-
-// Datos sobre Leomar
-const leomarData = {
-    nombre: 'Leomar Urcia',
-    grado: 'Titulado',
-    telefono: '+51 983636274',
-    ubicacion: 'Cartavio, Perú',
-    cumple: '28 de abril',
-    exp: '5 años',
-    email: 'leomar.urcia@tecsup.edu.pe',
-    free: 'Disponible',
-    image: '/img/leomar.jpg'
-};
-
-app.get('/portafolio/Leomar', (req, res) => {
-    // Renderiza la vista "Eduardo.ejs" con los datos proporcionados
-    res.render('index', { data: leomarData });
-});
-
-// Datos sobre Eduardo
-const eduardoData = {
-    nombre: 'Eduardo Dioses',
-    grado: 'Titulado',
-    telefono: '+51  937473824',
-    ubicacion: 'Piura, Perú',
-    cumple: '12 de Septiembre',
-    exp: '6 años',
-    email: 'eduardo.dioses@tecsup.edu.pe',
-    free: 'No disponible',
-    image: '/img/eduardo.jpg'
-};
-
-app.get('/portafolio/Eduardo', (req, res) => {
-    // Renderiza la vista "Eduardo.ejs" con los datos proporcionados
-    res.render('index', { data: eduardoData });
-});
-
 
 
 // Iniciar el servidor en el puerto 3000
