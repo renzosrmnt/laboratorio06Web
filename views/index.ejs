@@ -29,15 +29,15 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
     <!-- Navbar Start -->
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="/views/renzo.ejs" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span class="text-primary">R</span>creativx</h1>
+        <a href="#" class="navbar-brand ml-lg-3">
+            <h1 class="m-0 display-5"><span class="<%= data.texto %>">PORTA</span>FOLIO</h1>
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
             <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Inicio</a>
+                <a href="#home" class="nav-item nav-link active  ">Inicio</a>
                 <a href="#about" class="nav-item nav-link">Sobre mí</a>
                 <a href="#qualification" class="nav-item nav-link">Calidad</a>
                 <a href="#skill" class="nav-item nav-link">Habilidades</a>
@@ -47,7 +47,7 @@
                 <a href="#blog" class="nav-item nav-link">Blog</a>
                 <a href="#contact" class="nav-item nav-link">Contacto</a>
             </div>
-            <a href="" class="btn btn-outline-primary d-none d-lg-block">Contrátame</a>
+            <a href="" class="btn <%= data.borde %> d-none d-lg-block">Contrátame</a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -73,7 +73,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+    <div class="container-fluid <%= data.color %> d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
@@ -81,9 +81,9 @@
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <h3 class="text-white font-weight-normal mb-3">Soy</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;"><%= data.nombre %>!</h1>
+                    <h1 class="display-3 text-uppercase <%= data.texto %> mb-2" style="-webkit-text-stroke: 2px #ffffff;"><%= data.nombre %>!</h1>
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div>
+                    <div class="typed-text d-none"><%= data.mensajeuno %>, <%= data.mensajedos %>, <%= data.mensajetres %></div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" class="btn btn-outline-light mr-5">Descargar CV</a>
                     </div>
@@ -99,15 +99,15 @@
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Conóceme</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Sobre Mí</h1>
+                <h1 class="position-absolute text-uppercase <%= data.texto %>">Sobre Mí</h1>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
                     <img class="img-fluid rounded w-100" src="<%= data.image %>" alt="">
                 </div>
                 <div class="col-lg-7">
-                    <h3 class="mb-4">UI/UX Designer & Web Developer</h3>
-                    <p>Soy un apasionado diseñador de interfaces de usuario (UI) y desarrollador web con un enfoque centrado en crear experiencias digitales intuitivas y atractivas. Con una sólida formación en diseño gráfico y experiencia en desarrollo web, me especializo en traducir las necesidades del usuario en interfaces elegantes y funcionales. Constantemente explorando nuevas técnicas y tendencias, me enorgullece colaborar estrechamente con clientes y equipos multidisciplinarios para llevar proyectos desde la concepción hasta la implementación con éxito. ¡Bienvenido a mi página, espero inspirarte con mi trabajo!</p>
+                    <h3 class="mb-4"><%= data.especialidad %></h3>
+                    <p><%= data.descripcion %></p>
                     <div class="row mb-3">
                         <div class="col-sm-6 py-2"><h6>Nombre: <span class="text-secondary"><%= data.nombre %></span></h6></div>
                         <div class="col-sm-6 py-2"><h6>Cumpleaños: <span class="text-secondary"><%= data.cumple%></span></h6></div>
@@ -118,7 +118,7 @@
                         <div class="col-sm-6 py-2"><h6>Ubicación: <span class="text-secondary"><%= data.ubicacion %></span></h6></div>
                         <div class="col-sm-6 py-2"><h6>Freelance: <span class="text-secondary"><%= data.free %></span></h6></div>
                     </div>
-                    <a href="" class="btn btn-outline-primary mr-4">Contrátame</a>
+                    <a href="" class="btn <%= data.borde %> mr-4">Contrátame</a>
                 </div>
             </div>
         </div>
@@ -131,56 +131,45 @@
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Calidad</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Educación & Experiencia</h1>
+                <h1 class="position-absolute text-uppercase <%= data.texto %>">Educación & Experiencia</h1>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h3 class="mb-4">Mi Educación</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Licenciatura en Diseño y Desarrollo de Software</h5>
-                            <p class="mb-2"><strong>Tecsup</strong> | <small>2022 - 2024</small></p>
-                            <p>Durante mi formación, adquirí una sólida comprensión de los principios fundamentales del diseño centrado en el usuario y desarrollé habilidades en la creación de interfaces intuitivas y atractivas.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Certificación en Desarrollo Web Full Stack</h5>
-                            <p class="mb-2"><strong>Tecsup</strong> | <small>2022 - 2024</small></p>
-                            <p> Este programa me proporcionó una comprensión completa del desarrollo front-end y back-end, así como experiencia práctica en la creación de aplicaciones web dinámicas y funcionales.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Cursos y Talleres de Actualización:</h5>
-                            <p class="mb-2"><strong>Tecsup</strong> | <small>2022 - 2024</small></p>
-                            <p>Continuamente busco oportunidades para mejorar mis habilidades y mantenerme al día con las últimas tendencias y tecnologías en diseño y desarrollo web. He participado en una variedad de cursos y talleres, incluyendo temas como diseño responsivo, accesibilidad web y diseño de experiencias de usuario.</p>
-                        </div>
+                    <div class="border-left <%= data.linea %> pt-2 pl-4 ml-2">
+                        <% if (data.educacion) { %>
+                            <% Object.values(data.educacion).forEach((educacion, index) => { %>
+                                <div class="position-relative mb-4">
+                                    <i class="far fa-dot-circle <%= data.texto%> position-absolute" style="top: 2px; left: -32px;"></i>
+                                    <h5 class="font-weight-bold mb-1"><%= educacion.titulo %></h5>
+                                    <p class="mb-2"><strong><%= educacion.lugar %></strong> | <small><%= educacion.fecha %></small></p>
+                                    <p><%= educacion.resumen %></p>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <p>No hay información de educación disponible</p>
+                        <% } %>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <h3 class="mb-4">Mi experiencia</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Diseñador de UI/UX</h5>
-                            <p class="mb-2"><strong>PixelPerfect Solutionsy</strong> | <small>2021 - Presente</small></p>
-                            <p>En mi rol como diseñador de UI/UX en PixelPerfect Solutions, colaboré estrechamente con equipos de desarrollo para crear interfaces de usuario intuitivas y atractivas para aplicaciones web y móviles.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Desarrollador Web Front-end</h5>
-                            <p class="mb-2"><strong>CodeCrafters Inc.</strong> | <small>2021 - Presente</small></p>
-                            <p>Como desarrollador web front-end en CodeCrafters Inc., fui responsable de traducir diseños de UI/UX en código HTML, CSS y JavaScript.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Freelance UI/UX Consultant</h5>
-                            <p class="mb-2"><strong>Freelance</strong> | <small>2021 - Presente</small></p>
-                            <p>Como consultor independiente de UI/UX, he tenido la oportunidad de trabajar con una variedad de clientes en diferentes sectores. Desde start-ups hasta empresas establecidas.</p>
-                        </div>
+                    <div class="border-left <%= data.linea %> pt-2 pl-4 ml-2">
+                        <% if (data.experiencia) { %>
+                            <% Object.values(data.experiencia).forEach((experiencia, index) => { %>
+                                <div class="position-relative mb-4">
+                                    <i class="far fa-dot-circle <%= data.texto %> position-absolute" style="top: 2px; left: -32px;"></i>
+                                    <h5 class="font-weight-bold mb-1"><%= experiencia.titulo %></h5>
+                                    <p class="mb-2"><strong><%= experiencia.lugar %></strong> | <small><%= experiencia.fecha %></small></p>
+                                    <p><%= experiencia.resumen %></p>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <p>No hay información de experiencia disponible</p>
+                        <% } %>
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
     <!-- Qualification End -->
@@ -191,68 +180,45 @@
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Habilidades</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Mis Habilidades</h1>
+                <h1 class="position-absolute text-uppercase <%= data.texto %>">Mis Habilidades</h1>
             </div>
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">HTML</h6>
-                            <h6 class="font-weight-bold">95%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">CSS</h6>
-                            <h6 class="font-weight-bold">85%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">PHP</h6>
-                            <h6 class="font-weight-bold">90%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
+                    <% if (data.habilidad) { %>
+                        <% Object.values(data.habilidad).slice(0, 3).forEach((habilidad, index) => { %>
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold"><%= habilidad.nombre %></h6>
+                                    <h6 class="font-weight-bold"><%= habilidad.valor %>%</h6>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar <%= habilidad.color %>" " role="progressbar" aria-valuenow="<%= habilidad.valor %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <p>No hay información de habilidades disponible</p>
+                    <% } %>
                 </div>
                 <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Javascript</h6>
-                            <h6 class="font-weight-bold">90%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Angular JS</h6>
-                            <h6 class="font-weight-bold">95%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Wordpress</h6>
-                            <h6 class="font-weight-bold">85%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
+                    <% if (data.habilidad) { %>
+                        <% Object.values(data.habilidad).slice(3, 6).forEach((habilidad, index) => { %>
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold"><%= habilidad.nombre %></h6>
+                                    <h6 class="font-weight-bold"><%= habilidad.valor %>%</h6>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar <%= habilidad.color %>" role="progressbar" aria-valuenow="<%= habilidad.valor %>" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <p>No hay información de habilidades disponible</p>
+                    <% } %>
                 </div>
             </div>
+            
         </div>
     </div>
     <!-- Skill End -->
@@ -263,59 +229,29 @@
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Servicio</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Mis Servicios</h1>
+                <h1 class="position-absolute text-uppercase <%= data.texto %>">Mis Servicios</h1>
             </div>
             <div class="row pb-3">
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-laptop service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Web Design</h4>
+                <% if (data.servicio && Object.keys(data.servicio).length > 0) { %>
+                    <% Object.values(data.servicio).forEach((servicio, index) => { %>
+                        <div class="col-lg-4 col-md-6 text-center mb-5">
+                            <div class="d-flex align-items-center justify-content-center mb-4">
+                                <i class="<%= servicio.icono %> service-icon <%= data.color %> text-white mr-3"></i>
+                                <h4 class="font-weight-bold m-0"><%= servicio.titulo %></h4>
+                            </div>
+                            <p><%= servicio.descripcion %></p>
+                            <a class="border-bottom <%= data.linea %> <%= data.texto %> text-decoration-none" href="">Leer Más</a>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <div class="col text-center">
+                        <p>No hay servicios disponibles en este momento.</p>
                     </div>
-                    <p>Con un enfoque meticuloso en cada detalle, creo diseños web que no solo son visualmente impactantes, sino también intuitivos y fáciles de navegar.</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Leer Más</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-laptop-code service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Web Development</h4>
-                    </div>
-                    <p> Desde la conceptualización hasta la implementación, transformo tus ideas en sitios web dinámicos y funcionales.</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Leer Más</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fab fa-2x fa-android service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Apps Design</h4>
-                    </div>
-                    <p>Cada aplicación tiene su propia historia que contar, y me especializo en diseñar interfaces que cautivan y deleitan a los usuarios.</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Leer Más</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fab fa-2x fa-apple service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Apps Development</h4>
-                    </div>
-                    <p>Desde aplicaciones móviles hasta soluciones empresariales, desarrollo aplicaciones que impulsan el éxito de tu negocio.</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Leer Más</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-search service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">SEO</h4>
-                    </div>
-                    <p>Desde la investigación de palabras clave hasta la optimización técnica, implemento estrategias SEO personalizadas que aumentan tu visibilidad y atraen tráfico de calidad a tu sitio.</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Leer Más</a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-edit service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Content Creating</h4>
-                    </div>
-                    <p>El contenido es el alma de cualquier estrategia digital, y me especializo en crear contenido que resuene con tu audiencia y impulse la participación.</p>
-                    <a class="border-bottom border-primary text-decoration-none" href="">Leer Más</a>
-                </div>
+                <% } %>
             </div>
         </div>
+        
+        
     </div>
     <!-- Services End -->
 
@@ -325,81 +261,44 @@
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Proyecto</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Mi Portafolio</h1>
+                <h1 class="position-absolute text-uppercase <%= data.texto %>">Mi Portafolio</h1>
             </div>
             <div class="row">
                 <div class="col-12 text-center mb-2">
                     <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active"  data-filter="*">Todo</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Diseño</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Desarollo</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Marketing</li>
+                        <li class="btn btn-sm <%= data.borde %> m-1 active" data-filter="*">Todo</li>
+                        <li class="btn btn-sm <%= data.borde %> m-1" data-filter=".first">Diseño</li>
+                        <li class="btn btn-sm <%= data.borde %> m-1" data-filter=".second">Desarrollo</li>
+                        <li class="btn btn-sm <%= data.borde %> m-1" data-filter=".third">Marketing</li>
                     </ul>
                 </div>
             </div>
-            <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="/img/portfolio-1.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
+            <% if (data.portafolio && Object.keys(data.portafolio).length > 0) { %>
+                <div class="row portfolio-container">
+                    <% Object.keys(data.portafolio).forEach((tipo) => { %>
+                        <% Object.values(data.portafolio[tipo]).forEach((proyecto) => { %>
+                            <div class="col-lg-4 col-md-6 mb-4 portfolio-item <%= proyecto.categoria %>">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid rounded w-100" src="<%= proyecto.img %>" alt="">
+                                    <div class="portfolio-btn <%= data.color %> d-flex align-items-center justify-content-center">
+                                        <a href="<%= proyecto.enlace %>" data-lightbox="portfolio">
+                                            <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <div class="row">
+                    <div class="col text-center">
+                        <p>No hay proyectos disponibles en este momento.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="/img/portfolio-2.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="/img/portfolio-3.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-3.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="/img/portfolio-4.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="/img/portfolio-5.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-5.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="/img/portfolio-6.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-6.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <% } %>
         </div>
+        
     </div>
     <!-- Portfolio End -->
 
@@ -409,44 +308,31 @@
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Novedades</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Útimas Novedades</h1>
+                <h1 class="position-absolute text-uppercase <%= data.texto %>">Últimas Novedades</h1>
             </div>
             <div class="row">
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="/img/blog-1.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">31</h4>
-                            <small class="text-white text-uppercase">Mar</small>
+                <% if (data.novedades && Object.keys(data.novedades).length > 0) { %>
+                    <% Object.values(data.novedades).forEach((novedad) => { %>
+                        <div class="col-lg-4 mb-5">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded w-100" src="<%= novedad.img %>" alt="">
+                                <div class="blog-date <%= data.color %>">
+                                    <h4 class="font-weight-bold mb-n1 text-white"><%= novedad.dia %></h4>
+                                    <small class="text-white text-uppercase"><%= novedad.mes %></small>
+                                </div>
+                            </div>
+                            <h5 class="font-weight-medium mb-4"><%= novedad.titulo %></h5>
+                            <a class="btn btn-sm <%= data.borde %> py-2" href="<%= novedad.enlace %>">Leer Más</a>
                         </div>
+                    <% }) %>
+                <% } else { %>
+                    <div class="col text-center">
+                        <p>No hay novedades disponibles en este momento.</p>
                     </div>
-                    <h5 class="font-weight-medium mb-4">Tendencias en Diseño Gráfico para el 2024</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2" href="">Leer Más</a>
-                </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="/img/blog-2.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">31</h4>
-                            <small class="text-white text-uppercase">Mar</small>
-                        </div>
-                    </div>
-                    <h5 class="font-weight-medium mb-4">Los Fundamentos del Desarrollo Front-end</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2" href="">Leer Más</a>
-                </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="/img/blog-3.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">31</h4>
-                            <small class="text-white text-uppercase">Mar</small>
-                        </div>
-                    </div>
-                    <h5 class="font-weight-medium mb-4">Estrategias Efectivas de Marketing de Contenido</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2" href="">Leer Más</a>
-                </div>
+                <% } %>
             </div>
         </div>
+        
     </div>
     <!-- Blog End -->
 
@@ -456,7 +342,7 @@
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contacto</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contáctame</h1>
+                <h1 class="position-absolute text-uppercase <%= data.texto %>">Contáctame</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -487,7 +373,7 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-outline-primary" type="button" id="sendMessageButton" onclick="sendFormData()">Enviar</button>
+                                <button class="btn <%= data.borde %>" type="button" id="sendMessageButton" onclick="sendFormData()">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -499,7 +385,7 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div class="container-fluid <%= data.color %> text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="container text-center py-5">
             <div class="d-flex justify-content-center mb-4">
                 <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -516,7 +402,7 @@
                 <span class="px-3">|</span>
                 <a class="text-white" href="#">Help</a>
             </div>
-            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">Rcreativx</a>. All Rights Reserved.
+            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">PORTAFOLIO</a>. All Rights Reserved.
             </p>
         </div>
     </div>
@@ -553,7 +439,7 @@
                 body: formData
             }).then(response => {
                 // Redireccionar a la página deseada después de enviar el formulario
-                window.location.href = "tu-pagina-de-destino.html";
+                window.location.href = "confirmacion.ejs";
             }).catch(error => {
                 console.error("Error al enviar el formulario:", error);
             });
