@@ -35,10 +35,10 @@
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active  ">Inicio</a>
-                <a href="#about" class="nav-item nav-link">Sobre mí</a>
+        <div class="collapse navbar-collapse px-lg-3 " id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0 ">
+                <a href="#home" class="nav-item nav-link active ">Inicio</a>
+                <a href="#about" class="nav-item nav-link <%= data.nav %>">Sobre mí</a>
                 <a href="#qualification" class="nav-item nav-link">Calidad</a>
                 <a href="#skill" class="nav-item nav-link">Habilidades</a>
                 <a href="#service" class="nav-item nav-link">Servicios</a>
@@ -85,7 +85,7 @@
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none"><%= data.mensajeuno %>, <%= data.mensajedos %>, <%= data.mensajetres %></div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="" class="btn btn-outline-light mr-5">Descargar CV</a>
+                        <a href="<%= data.cv %>" class="btn btn-outline-light mr-5" download>Descargar CV</a>
                     </div>
                 </div>
             </div>
